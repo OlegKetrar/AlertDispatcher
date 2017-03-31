@@ -11,6 +11,13 @@
 		55A060101E8E9EFE0098466C /* AlertDispatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 55A0600D1E8E9EFE0098466C /* AlertDispatcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		55A060111E8E9EFE0098466C /* AlertDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A0600E1E8E9EFE0098466C /* AlertDispatcher.swift */; };
 		55A0601E1E8E9F310098466C /* AlertDispatcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A060141E8E9F060098466C /* AlertDispatcherTests.swift */; };
+		55A060241E8EA13D0098466C /* AlertUIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A060201E8EA13D0098466C /* AlertUIKit.swift */; };
+		55A060251E8EA13D0098466C /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A060211E8EA13D0098466C /* AppError.swift */; };
+		55A060261E8EA13D0098466C /* AppErrorAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A060221E8EA13D0098466C /* AppErrorAlert.swift */; };
+		55A060271E8EA13D0098466C /* Permission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A060231E8EA13D0098466C /* Permission.swift */; };
+		55A060291E8EA1A50098466C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A060281E8EA1A50098466C /* Extensions.swift */; };
+		55A0602B1E8EA4F40098466C /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 55A0602A1E8EA4F40098466C /* Cartfile */; };
+		55A0602E1E8EA58D0098466C /* TaskKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55A0602D1E8EA58D0098466C /* TaskKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +41,13 @@
 		55A060181E8E9F0F0098466C /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		55A0601A1E8E9F170098466C /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		55A0601B1E8E9F170098466C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		55A060201E8EA13D0098466C /* AlertUIKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertUIKit.swift; sourceTree = "<group>"; };
+		55A060211E8EA13D0098466C /* AppError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
+		55A060221E8EA13D0098466C /* AppErrorAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppErrorAlert.swift; sourceTree = "<group>"; };
+		55A060231E8EA13D0098466C /* Permission.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Permission.swift; sourceTree = "<group>"; };
+		55A060281E8EA1A50098466C /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		55A0602A1E8EA4F40098466C /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
+		55A0602D1E8EA58D0098466C /* TaskKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TaskKit.framework; path = Carthage/Build/iOS/TaskKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55A0602E1E8EA58D0098466C /* TaskKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,9 +76,11 @@
 				55A0601B1E8E9F170098466C /* README.md */,
 				55A060181E8E9F0F0098466C /* LICENSE */,
 				55A0601A1E8E9F170098466C /* Package.swift */,
+				55A0602A1E8EA4F40098466C /* Cartfile */,
 				55A0600C1E8E9EFE0098466C /* Sources */,
 				55A060131E8E9F060098466C /* AlertDispatcherTests */,
 				55A05FF31E8E9E930098466C /* Products */,
+				55A0602C1E8EA58C0098466C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,9 +96,14 @@
 		55A0600C1E8E9EFE0098466C /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				55A0600D1E8E9EFE0098466C /* AlertDispatcher.h */,
 				55A0600E1E8E9EFE0098466C /* AlertDispatcher.swift */,
+				55A060281E8EA1A50098466C /* Extensions.swift */,
+				55A060201E8EA13D0098466C /* AlertUIKit.swift */,
+				55A060211E8EA13D0098466C /* AppError.swift */,
+				55A060221E8EA13D0098466C /* AppErrorAlert.swift */,
+				55A060231E8EA13D0098466C /* Permission.swift */,
 				55A0600F1E8E9EFE0098466C /* Info.plist */,
+				55A0600D1E8E9EFE0098466C /* AlertDispatcher.h */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -94,6 +116,14 @@
 			);
 			name = AlertDispatcherTests;
 			path = Tests/AlertDispatcherTests;
+			sourceTree = "<group>";
+		};
+		55A0602C1E8EA58C0098466C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				55A0602D1E8EA58D0098466C /* TaskKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,6 +222,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55A0602B1E8EA4F40098466C /* Cartfile in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,6 +258,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				55A060111E8E9EFE0098466C /* AlertDispatcher.swift in Sources */,
+				55A060291E8EA1A50098466C /* Extensions.swift in Sources */,
+				55A060261E8EA13D0098466C /* AppErrorAlert.swift in Sources */,
+				55A060241E8EA13D0098466C /* AlertUIKit.swift in Sources */,
+				55A060251E8EA13D0098466C /* AppError.swift in Sources */,
+				55A060271E8EA13D0098466C /* Permission.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,6 +395,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -378,6 +418,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
