@@ -8,6 +8,8 @@
 
 import Foundation
 
+// TODO: Use UIKitExtensions
+
 // MARK: - Convenience localization
 
 extension String {

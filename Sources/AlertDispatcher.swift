@@ -13,6 +13,15 @@ import TaskKit
 
 // MARK: - Alert
 
+//public protocol Task {
+//
+//    associatedtype Input
+//
+//    associatedtype Output
+//
+//    public var execute: (Self.Input, @escaping (Self.Output) -> Swift.Void) -> Swift.Void { get }
+//}
+
 public struct Alert {
 	public typealias Handler = (@escaping () -> Void) -> Void
 	
