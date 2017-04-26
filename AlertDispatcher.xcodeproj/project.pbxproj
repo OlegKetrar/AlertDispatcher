@@ -42,7 +42,6 @@
 		55A0601B1E8E9F170098466C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		55A060201E8EA13D0098466C /* AlertUIKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertUIKit.swift; sourceTree = "<group>"; };
 		55A060281E8EA1A50098466C /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		55A0602A1E8EA4F40098466C /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,7 +69,6 @@
 				55A0601B1E8E9F170098466C /* README.md */,
 				55A060181E8E9F0F0098466C /* LICENSE */,
 				55A0601A1E8E9F170098466C /* Package.swift */,
-				55A0602A1E8EA4F40098466C /* Cartfile */,
 				55A0600C1E8E9EFE0098466C /* Sources */,
 				55A060131E8E9F060098466C /* AlertDispatcherTests */,
 				55A05FF31E8E9E930098466C /* Products */,
