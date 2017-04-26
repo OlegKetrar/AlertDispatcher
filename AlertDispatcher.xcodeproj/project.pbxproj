@@ -7,17 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		558B15AD1EB0EE6400C786BA /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558B15AC1EB0EE6400C786BA /* Alert.swift */; };
+		558B15AF1EB0EED700C786BA /* AsyncBlockOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558B15AE1EB0EED700C786BA /* AsyncBlockOperation.swift */; };
 		55A05FFC1E8E9E930098466C /* AlertDispatcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55A05FF21E8E9E930098466C /* AlertDispatcher.framework */; };
 		55A060101E8E9EFE0098466C /* AlertDispatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 55A0600D1E8E9EFE0098466C /* AlertDispatcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		55A060111E8E9EFE0098466C /* AlertDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A0600E1E8E9EFE0098466C /* AlertDispatcher.swift */; };
 		55A0601E1E8E9F310098466C /* AlertDispatcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A060141E8E9F060098466C /* AlertDispatcherTests.swift */; };
 		55A060241E8EA13D0098466C /* AlertUIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A060201E8EA13D0098466C /* AlertUIKit.swift */; };
-		55A060251E8EA13D0098466C /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A060211E8EA13D0098466C /* AppError.swift */; };
-		55A060261E8EA13D0098466C /* AppErrorAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A060221E8EA13D0098466C /* AppErrorAlert.swift */; };
-		55A060271E8EA13D0098466C /* Permission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A060231E8EA13D0098466C /* Permission.swift */; };
 		55A060291E8EA1A50098466C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A060281E8EA1A50098466C /* Extensions.swift */; };
-		55A0602B1E8EA4F40098466C /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 55A0602A1E8EA4F40098466C /* Cartfile */; };
-		55A0602E1E8EA58D0098466C /* TaskKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55A0602D1E8EA58D0098466C /* TaskKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +28,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		558B15AC1EB0EE6400C786BA /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		558B15AE1EB0EED700C786BA /* AsyncBlockOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncBlockOperation.swift; sourceTree = "<group>"; };
 		55A05FF21E8E9E930098466C /* AlertDispatcher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AlertDispatcher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		55A05FFB1E8E9E930098466C /* AlertDispatcherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlertDispatcherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		55A0600D1E8E9EFE0098466C /* AlertDispatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertDispatcher.h; sourceTree = "<group>"; };
@@ -42,12 +41,8 @@
 		55A0601A1E8E9F170098466C /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		55A0601B1E8E9F170098466C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		55A060201E8EA13D0098466C /* AlertUIKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertUIKit.swift; sourceTree = "<group>"; };
-		55A060211E8EA13D0098466C /* AppError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
-		55A060221E8EA13D0098466C /* AppErrorAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppErrorAlert.swift; sourceTree = "<group>"; };
-		55A060231E8EA13D0098466C /* Permission.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Permission.swift; sourceTree = "<group>"; };
 		55A060281E8EA1A50098466C /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		55A0602A1E8EA4F40098466C /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
-		55A0602D1E8EA58D0098466C /* TaskKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TaskKit.framework; path = Carthage/Build/iOS/TaskKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +50,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				55A0602E1E8EA58D0098466C /* TaskKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,7 +74,6 @@
 				55A0600C1E8E9EFE0098466C /* Sources */,
 				55A060131E8E9F060098466C /* AlertDispatcherTests */,
 				55A05FF31E8E9E930098466C /* Products */,
-				55A0602C1E8EA58C0098466C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,12 +89,11 @@
 		55A0600C1E8E9EFE0098466C /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				558B15AC1EB0EE6400C786BA /* Alert.swift */,
 				55A0600E1E8E9EFE0098466C /* AlertDispatcher.swift */,
+				558B15AE1EB0EED700C786BA /* AsyncBlockOperation.swift */,
 				55A060281E8EA1A50098466C /* Extensions.swift */,
 				55A060201E8EA13D0098466C /* AlertUIKit.swift */,
-				55A060211E8EA13D0098466C /* AppError.swift */,
-				55A060221E8EA13D0098466C /* AppErrorAlert.swift */,
-				55A060231E8EA13D0098466C /* Permission.swift */,
 				55A0600F1E8E9EFE0098466C /* Info.plist */,
 				55A0600D1E8E9EFE0098466C /* AlertDispatcher.h */,
 			);
@@ -116,14 +108,6 @@
 			);
 			name = AlertDispatcherTests;
 			path = Tests/AlertDispatcherTests;
-			sourceTree = "<group>";
-		};
-		55A0602C1E8EA58C0098466C /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				55A0602D1E8EA58D0098466C /* TaskKit.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,7 +206,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				55A0602B1E8EA4F40098466C /* Cartfile in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,12 +240,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				558B15AF1EB0EED700C786BA /* AsyncBlockOperation.swift in Sources */,
 				55A060111E8E9EFE0098466C /* AlertDispatcher.swift in Sources */,
 				55A060291E8EA1A50098466C /* Extensions.swift in Sources */,
-				55A060261E8EA13D0098466C /* AppErrorAlert.swift in Sources */,
+				558B15AD1EB0EE6400C786BA /* Alert.swift in Sources */,
 				55A060241E8EA13D0098466C /* AlertUIKit.swift in Sources */,
-				55A060251E8EA13D0098466C /* AppError.swift in Sources */,
-				55A060271E8EA13D0098466C /* Permission.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,7 +309,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -375,7 +357,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";

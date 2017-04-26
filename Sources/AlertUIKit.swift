@@ -1,6 +1,6 @@
 //
 //  AlertUIKit.swift
-//  Tools
+//  AlertDispatcher
 //
 //  Created by Oleg Ketrar on 10.02.17.
 //  Copyright © 2017 Oleg Ketrar. All rights reserved.
@@ -10,7 +10,15 @@ import UIKit
 
 // MARK: - Wrap UIAlertController into Alert
 
+private var alertTintColor: UIColor?
+
 extension Alert {
+
+    ///
+    static var tintColor: UIColor? {
+        get { return alertTintColor }
+        set { alertTintColor = newValue }
+    }
 	
 	/// recursivelly find top UIViewController
 	public static var topViewController: UIViewController {
@@ -32,6 +40,7 @@ extension Alert {
 	/// simple alert with ok button
 	public static func alert(title: String,
 	                  message: String? = nil,
+	                  tintColor: UIColor? = Alert.tintColor,
 	                  cancelTitle: String = "Ok".localized(with: .UIKit),
 	                  completion: @escaping () -> Void = {}) -> Alert {
 		
@@ -47,6 +56,7 @@ extension Alert {
 	/// dialog with action & cancel buttons (perform action with UI request)
 	public static func dialog(title: String,
 	                   message: String? = nil,
+	                   tintColor: UIColor? = Alert.tintColor,
 	                   cancelTitle: String = "Cancel".localized(with: .UIKit),
 	                   actionTitle: String = "Ok".localized(with: .UIKit),
 	                   isDestructive: Bool = false,
@@ -62,6 +72,14 @@ extension Alert {
 			
 			alert.addAction(cancel)
 			alert.addAction(action)
+
+            if #available(iOS 9.0, *) {
+                alert.preferredAction = isDestructive ? cancel : action
+            }
+
+            if let tintColor = tintColor {
+                alert.view.tintColor = tintColor
+            }
 			
 			Alert.topViewController.present(alert, animated: true)
 		}
