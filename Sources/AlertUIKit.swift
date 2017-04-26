@@ -15,7 +15,7 @@ private var alertTintColor: UIColor?
 extension Alert {
 
     ///
-    static var tintColor: UIColor? {
+    public static var tintColor: UIColor? {
         get { return alertTintColor }
         set { alertTintColor = newValue }
     }
