@@ -47,7 +47,12 @@ extension Alert {
 		return Alert { (onFinish) in
 			let alert  = UIAlertController(title: title, message: message, preferredStyle: .alert)
 			let cancel = UIAlertAction(title: cancelTitle, style: .default) { _ in delay { onFinish(); completion() }}
+
 			alert.addAction(cancel)
+
+            if let tintColor = tintColor {
+                alert.view.tintColor = tintColor
+            }
 			
 			Alert.topViewController.present(alert, animated: true)
 		}
