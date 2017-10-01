@@ -7,10 +7,7 @@
 //
 
 import Foundation
-
-// TODO: Use UIKitExtensions
-
-// MARK: - Convenience localization
+import Dispatch
 
 extension String {
     var localized: String {
@@ -29,10 +26,8 @@ extension Bundle {
     }
 }
 
-// MARK: - NSLock
-
 extension NSLock {
-    func withCriticalScope<T>(_ block: (Void) -> T) -> T {
+    func withCriticalScope<T>(_ block: () -> T) -> T {
         lock()
         let value = block()
         unlock()
@@ -40,12 +35,9 @@ extension NSLock {
     }
 }
 
-// MARK: - Convenience closures
-
-/// we need add delay to onFinish closure because
+/// We need add delay to onFinish closure because
 /// onFinish will be called before animation
 /// (standart dismiss animation delay is 0.33 seconds = 330 milliseconds)
-
 func delayed(_ closure: @escaping () -> Void) -> () -> Void {
     return { DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(350)) { closure() } }
 }

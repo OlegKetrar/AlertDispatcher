@@ -8,8 +8,6 @@
 
 import Foundation
 
-// TODO: refactor Alert to use Task
-
 public struct Alert {
     public typealias Handler = (@escaping () -> Void) -> Void
 
@@ -24,14 +22,9 @@ public struct Alert {
     var conditionClosure:  () -> Bool = { return true }
     var completionClosure: () -> Void = {}
 
-    // MARK: - Init
+    // MARK: Init
 
     public init(_ closure: @escaping Alert.Handler) {
-        self.presentationClosure = closure
-    }
-
-    public init(presentNow closure: @escaping Alert.Handler) {
-        self.isDispatchable      = false
         self.presentationClosure = closure
     }
 
@@ -47,7 +40,7 @@ public struct Alert {
     }
 }
 
-// MARK: - Configuring
+// MARK: Configuring
 
 extension Alert {
 
@@ -93,7 +86,8 @@ extension Alert {
         return copy
     }
 
-    /// append completion closure to existing completion
+    /// Append `completion` closure to existing `completion`.
+    /// Completions will be called by FIFO rule (queue).
     public func addCompletion(_ closure: @escaping () -> Void) -> Alert {
         var copy = self
         let oldClosure = self.completionClosure
@@ -103,5 +97,7 @@ extension Alert {
 }
 
 extension Alert {
-    public static var empty: Alert { return Alert { $0() }.ignored() }
+    public static var empty: Alert {
+        return Alert { $0() }.ignored()
+    }
 }

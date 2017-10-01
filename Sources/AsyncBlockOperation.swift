@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Dispatch
 
 final class AsyncBlockOperation: Operation {
     private static let stateKeyPath: String = "state"
@@ -15,7 +16,7 @@ final class AsyncBlockOperation: Operation {
     class func keyPathsForValuesAffectingIsExecuting() -> Set<NSObject> { return [stateKeyPath as NSObject] }
     class func keyPathsForValuesAffectingIsFinished()  -> Set<NSObject> { return [stateKeyPath as NSObject] }
 
-    // MARK: - State machine
+    // MARK: State machine
 
     private enum State {
         case initialized
@@ -71,7 +72,7 @@ final class AsyncBlockOperation: Operation {
     }
 
     /// Add a completion block to be executed after the `NSOperation` enters the "finished" state.
-    func addCompletionBlock(_ block: @escaping (Void) -> Void) {
+    func addCompletionBlock(_ block: @escaping () -> Void) {
         if let existing = completionBlock {
             completionBlock = { existing(); block() }
         } else {
@@ -79,16 +80,16 @@ final class AsyncBlockOperation: Operation {
         }
     }
 
-    // MARK: - Overrides
+    // MARK: Overrides
 
     override func main() {
         guard state == .initialized else { return }
         state = .executing
 
-        DispatchQueue.main.asyncAfter(deadline: .now() + delayBefore + .nanoseconds(1)) { [weak self] in
+        DispatchQueue.main.asyncAfter(deadline: .now() + delayBefore) { [weak self] in
             self?.executionClosure {
                 guard let time = self?.delayAfter else { return }
-                DispatchQueue.main.asyncAfter(deadline: .now() + time + .nanoseconds(1)) { self?.state = .finished }
+                DispatchQueue.main.asyncAfter(deadline: .now() + time) { self?.state = .finished }
             }
         }
     }
@@ -97,9 +98,8 @@ final class AsyncBlockOperation: Operation {
     override var isExecuting: Bool { return state == .executing }
     override var isFinished: Bool  { return state == .finished }
 
-    // MARK: - Unsupported
+    // MARK: Unsupported
 
     override func cancel() {}
     override func waitUntilFinished() {}
 }
-
