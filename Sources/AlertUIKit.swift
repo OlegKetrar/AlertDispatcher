@@ -36,8 +36,8 @@ extension Alert {
                 return parent
             }
         }
-        return presentedVC(to: rootVC)
 
+        return presentedVC(to: rootVC)
     }
 
     /// Simple alert with `OK` button.
@@ -48,9 +48,19 @@ extension Alert {
         cancelTitle: String = defaultOkeyTitle,
         completion: @escaping () -> Void = {}) -> Alert {
 
-        return Alert { onFinish in
-            let alert  = UIAlertController(title: title, message: message, preferredStyle: .alert)
-            let cancel = UIAlertAction(title: cancelTitle, style: .default) { _ in delay { onFinish(); completion() }}
+        return Alert { finish in
+
+            let alert = UIAlertController(
+                title: title,
+                message: message,
+                preferredStyle: .alert)
+
+            let cancel = UIAlertAction(
+                title: cancelTitle,
+                style: .default,
+                handler: { _ in
+                    delay { finish(); completion() }
+                })
 
             alert.addAction(cancel)
 
@@ -59,6 +69,12 @@ extension Alert {
             }
 
             Alert.topViewController.present(alert, animated: true)
+
+            // if system can't present alert,
+            // we need to unblock our alert queue
+            if alert.presentingViewController == nil {
+                finish()
+            }
         }
     }
 
@@ -73,25 +89,43 @@ extension Alert {
         actionClosure: @escaping () -> Void,
         completion: @escaping () -> Void = {}) -> Alert {
 
-        return Alert { onFinish in
-            let actionStyle = isDestructive ? UIAlertActionStyle.destructive : UIAlertActionStyle.default
+        return Alert { finish in
 
-            let alert  = UIAlertController(title: title, message: message, preferredStyle: .alert)
-            let cancel = UIAlertAction(title: cancelTitle, style: .cancel) { _ in delay { onFinish(); completion() }}
-            let action = UIAlertAction(title: actionTitle, style: actionStyle) { _ in delay { onFinish(); actionClosure(); completion() }}
+            let alert = UIAlertController(
+                title: title,
+                message: message,
+                preferredStyle: .alert)
+
+            let cancel = UIAlertAction(
+                title: cancelTitle,
+                style: .cancel,
+                handler: { _ in
+                    delay { finish(); completion() }
+                })
+
+            let action = UIAlertAction(
+                title: actionTitle,
+                style: isDestructive ? .destructive : .default,
+                handler: { _ in
+                    delay { finish(); actionClosure(); completion() }
+                })
 
             alert.addAction(cancel)
             alert.addAction(action)
 
-            if #available(iOS 9.0, *) {
-                alert.preferredAction = isDestructive ? cancel : action
-            }
+            alert.preferredAction = isDestructive ? cancel : action
 
             if let tintColor = tintColor {
                 alert.view.tintColor = tintColor
             }
 
             Alert.topViewController.present(alert, animated: true)
+
+            // if system can't present alert,
+            // we need to unblock our alert queue
+            if alert.presentingViewController == nil {
+                finish()
+            }
         }
     }
 }
