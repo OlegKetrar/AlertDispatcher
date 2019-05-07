@@ -12,16 +12,17 @@ import Dispatch
 final class AsyncBlockOperation: Operation {
     private static let stateKeyPath: String = "state"
 
-    class func keyPathsForValuesAffectingIsReady()     -> Set<NSObject> { return [stateKeyPath as NSObject] }
-    class func keyPathsForValuesAffectingIsExecuting() -> Set<NSObject> { return [stateKeyPath as NSObject] }
-    class func keyPathsForValuesAffectingIsFinished()  -> Set<NSObject> { return [stateKeyPath as NSObject] }
+    override class func keyPathsForValuesAffectingValue(forKey key: String) -> Set<String> {
+        guard let _ = State(rawValue: key) else { return super.keyPathsForValuesAffectingValue(forKey: key) }
+        return [AsyncBlockOperation.stateKeyPath]
+    }
 
     // MARK: State machine
 
-    private enum State {
-        case initialized
-        case executing
-        case finished
+    private enum State: String {
+        case initialized = "isReady"
+        case executing = "isExecuting"
+        case finished = "isFinished"
 
         func canTransition(to newState: State) -> Bool {
             switch (self, newState) {
