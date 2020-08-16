@@ -125,10 +125,9 @@
 			};
 			buildConfigurationList = 55A05FEC1E8E9E930098466C /* Build configuration list for PBXProject "AlertDispatcher" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
 				Base,
 			);
@@ -165,7 +164,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "TAGS=\"TODO:|FIXME:\"\necho \"searching ${SRCROOT} for ${TAGS}\"\nfind \"${SRCROOT}/Sources\" \\( -name \"*.swift\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($TAGS).*\\$\" | perl -p -e \"s/($TAGS)/ warning: \\$1/\"";
+			shellScript = "TAGS=\"TODO:|FIXME:\"\necho \"searching ${SRCROOT} for ${TAGS}\"\nfind \"${SRCROOT}/Sources\" \\( -name \"*.swift\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($TAGS).*\\$\" | perl -p -e \"s/($TAGS)/ warning: \\$1/\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -242,7 +241,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -298,7 +297,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -324,7 +323,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -346,7 +345,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
