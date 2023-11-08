@@ -24,9 +24,9 @@ extension Alert {
     }()
 
     /// Recursivelly find top `UIViewController`.
-    public static var topViewController: UIViewController {
+    public static var topViewController: UIViewController? {
         guard let rootVC = UIApplication.shared.keyWindow?.rootViewController else {
-            fatalError("UIApplication.keyWindow does not have rootViewController")
+            return nil
         }
 
         func presentedVC(to parent: UIViewController) -> UIViewController {
@@ -46,7 +46,8 @@ extension Alert {
         message: String? = nil,
         tintColor: UIColor? = Alert.tintColor,
         cancelTitle: String = defaultOkeyTitle,
-        completion: @escaping () -> Void = {}) -> Alert {
+        completion: @escaping () -> Void = {}
+    ) -> Alert {
 
         return Alert { finish in
 
@@ -68,7 +69,12 @@ extension Alert {
                 alert.view.tintColor = tintColor
             }
 
-            Alert.topViewController.present(alert, animated: true)
+            guard let topVC = Alert.topViewController else {
+                finish()
+                return
+            }
+
+            topVC.present(alert, animated: true)
 
             // if system can't present alert,
             // we need to unblock our alert queue
@@ -87,7 +93,8 @@ extension Alert {
         actionTitle: String = defaultOkeyTitle,
         isDestructive: Bool = false,
         actionClosure: @escaping () -> Void,
-        completion: @escaping () -> Void = {}) -> Alert {
+        completion: @escaping () -> Void = {}
+    ) -> Alert {
 
         return Alert { finish in
 
@@ -119,7 +126,12 @@ extension Alert {
                 alert.view.tintColor = tintColor
             }
 
-            Alert.topViewController.present(alert, animated: true)
+            guard let topVC = Alert.topViewController else {
+                finish()
+                return
+            }
+
+            topVC.present(alert, animated: true)
 
             // if system can't present alert,
             // we need to unblock our alert queue

@@ -1,16 +1,14 @@
-// swift-tools-version:5.2
-
+// swift-tools-version:5.9
 import PackageDescription
 
 let package = Package(
     name: "AlertDispatcher",
     platforms: [
-        .iOS(.v9)
+        .iOS(.v13)
     ],
     products: [
         .library(
             name: "AlertDispatcher",
-            type: .dynamic,
             targets: ["AlertDispatcher"]),
     ],
     dependencies: [],
